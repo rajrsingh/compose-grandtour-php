@@ -13,18 +13,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   }
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
   if (!isset($_SESSION['items'])) $_SESSION['items'] = array();
-    if (isset($_POST['word'])) {
-      $word = $_POST['word'];
-      $defin = $_POST['definition'];
-      $item = array(
-        "word" => $word, 
-        "definition" => $defin
-      );
-      array_push($_SESSION['items'], $item);
-      header('Content-type: text/plain');
-      echo 'added word ',$_SESSION['items'][0]['word'],' and definition ',$_SESSION['items'][0]['definition'],' to session';
-    }
+  
+  parse_str(file_get_contents("php://input"), $put_vars);
+  if (isset($put_vars['word'])) {
+    $word = $put_vars['word'];
+    $defin = $put_vars['definition'];
+    $item = array(
+      "word" => $word, 
+      "definition" => $defin
+    );
+    array_push($_SESSION['items'], $item);
+    header('Content-type: text/plain');
+    echo 'added word ',$_SESSION['items'][0]['word'],' and definition ',$_SESSION['items'][0]['definition'],' to session';
+  }
 }
 ?>

@@ -20,7 +20,7 @@ $(document).ready(function() {
     e.preventDefault();
     $.ajax({
       url: '../example',
-      type: 'POST',
+      type: 'PUT',
       data: $(this).serialize(),
       success: function(data) {
         reload();
