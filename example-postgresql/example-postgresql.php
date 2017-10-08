@@ -40,10 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   echo '{"items":',json_encode($items),'}';
 }
   
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  if (isset($_POST['word'])) {
-    $w = $_POST['word'];
-    $d = $_POST['definition'];
+if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+  parse_str(file_get_contents("php://input"), $put_vars);
+  if (isset($put_vars['word'])) {
+    $w = $put_vars['word'];
+    $d = $put_vars['definition'];
     $sql = 'INSERT INTO words(name, definition) VALUES(:w, :d)';
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':w', $w);
