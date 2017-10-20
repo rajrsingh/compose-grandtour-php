@@ -1,5 +1,5 @@
 <?php
-include_once('env.php');
+require_once('env.php');
 
 try {
   $dbh = new PDO("pgsql:host=$host;dbname=$dbname;port=$port", $dbuser, $dbpass, array(PDO::ATTR_PERSISTENT => true));	
