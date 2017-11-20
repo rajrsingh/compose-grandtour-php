@@ -3,7 +3,7 @@ $(document).ready(function() {
   function reload() {
     $('.hidden').fadeOut();
     $('displayOutput').empty();
-    $.getJSON( '/words').done(function(data) {
+    $.getJSON( 'words').done(function(data) {
       console.log("showing", data);
       var rendered = "<ul>";
       if(data.length) {
@@ -21,7 +21,7 @@ $(document).ready(function() {
   $('#add-word').submit(function(e) {
     e.preventDefault();
     $.ajax({
-      url: '/words',
+      url: 'words',
       type: 'PUT',
       data: $(this).serialize(),
       success: function(data) {

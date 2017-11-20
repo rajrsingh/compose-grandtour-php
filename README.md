@@ -1,6 +1,6 @@
 # The Grand Tour - PHP
 
-A set of example applications that will add word/definition pairs to a database running on Compose.
+A set of example applications that will add word/definition pairs to a database running on Compose.  Designed for PHP 7 (but will probably work on outdated PHP versions, e.g. PHP 5).
 
 ## Running the Example
 
@@ -10,6 +10,6 @@ To run from the command-line:
 * Navigate to the example-<_db_> directory
 * Rename the file `example-<_db_>/env.template.php` to `example-<_db_>/env.php`
 * In the file `example-<_db_>/env.php`, change the connection variables to match those of your Compose database instance.
-* And then in your browser: `http://localhost/php/example-<_db_>/templates/index.html`
-
-The application will be served on your localhost and can be opened in a browser.
+* Start the webserver with `php -S localhost:8080`
+*
+The application will be served on http://localhost:8080 and can be opened in a browser.
