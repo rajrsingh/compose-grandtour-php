@@ -1,18 +1,15 @@
 # The Grand Tour - PHP
 
-A set of example applications that will add word/definition pairs to a database running on Compose.
-
-This repo contains the apps written in PHP 5.6.30.
+A set of example applications that will add word/definition pairs to a database running on Compose.  Designed for PHP 7 (but will probably work on outdated PHP versions, e.g. PHP 5).
 
 ## Running the Example
 
 To run from the command-line:
 
-* Make sure you have a web server running on your computer that can execute PHP 5.5+ and has the appropriate driver installed for the database you are using
 * Clone this repo to the root of your web server's document directory
 * Navigate to the example-<_db_> directory
 * Rename the file `example-<_db_>/env.template.php` to `example-<_db_>/env.php`
 * In the file `example-<_db_>/env.php`, change the connection variables to match those of your Compose database instance.
-* And then in your browser: `http://localhost/php/example-<_db_>/templates/index.html`
-
-The application will be served on your localhost and can be opened in a browser.
+* Start the webserver with `php -S localhost:8080`
+*
+The application will be served on http://localhost:8080 and can be opened in a browser.
