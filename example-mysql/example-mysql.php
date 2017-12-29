@@ -2,7 +2,7 @@
 require('config.php'); // this sets up $db
 
 try {
-    $dbh = new PDO("pgsql:host=" . $db['host'] . ";dbname=" . $db['dbname'] . ";port=" . $db['port'], 
+    $dbh = new PDO("mysql:host=" . $db['host'] . ";dbname=" . $db['dbname'] . ";port=" . $db['port'], 
         $db['user'], $db['pass'], array(PDO::ATTR_PERSISTENT => true));	
 } catch(PDOException $e) {
     echo "Error : " . $e->getMessage() . "<br/>";
